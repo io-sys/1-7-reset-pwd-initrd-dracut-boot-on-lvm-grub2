@@ -21,24 +21,23 @@
 >  
 > Примечание: `/etc/grub2.cfg` ссылка на `/boot/grub2/grub.cfg`
 
-
 > Для редактирования файлов воспользуюсь `sed` с параметрами `s` (`substitute`) заменить и  
 > `g` (`global`) - без оператора, операция замены будет производиться только для первого найденного совпадения,  
 > с заданным шаблоном, в каждой строке.  
 
 Редактировать, заменить старое  `VolGroup00` имя `vg` в файлах на новое `OtusRoot`
 ```php
-sed -i.bak01 s/VolGroup00/OtusRoot/g /etc/fstab
-sed -i.bak01 s/VolGroup00/OtusRoot/g /etc/default/grub
-sed -i.bak01 s/VolGroup00/OtusRoot/g /boot/grub2/grub.cfg
+[root@linux]# sed -i.bak01 s/VolGroup00/OtusRoot/g /etc/fstab
+[root@linux]# sed -i.bak01 s/VolGroup00/OtusRoot/g /etc/default/grub
+[root@linux]# sed -i.bak01 s/VolGroup00/OtusRoot/g /boot/grub2/grub.cfg
 ```
 
 Пересоздать `initrd` образ, чтобы обновить измененное название `Volume Group` или не загрузится система.
 ```php
-mkinitrd -f -v /boot/initramfs-$(uname -r).img $(uname -r)
+[root@linux]# mkinitrd -f -v /boot/initramfs-$(uname -r).img $(uname -r)
 . . . .
 *** Creating image file ***
 *** Creating image file done ***
 *** Creating initramfs image file '/boot/initramfs-3.10.0-862.2.3.el7.x86_64.img' done ***
-. . . .
+[root@linux]# 
 ```
