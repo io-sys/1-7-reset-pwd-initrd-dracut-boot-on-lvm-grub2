@@ -14,12 +14,9 @@
 [root@linux]#
 ```
 > Далее правим:
->	1) /etc/fstab
->	2) /etc/default/grub
->	3) /boot/grub2/grub.cfg
->
+>	1. /etc/fstab
+>	2. /etc/default/grub
+>	3. /boot/grub2/grub.cfg
 > ─ везде заменяем старое название на новое. По ссылкам можно увидеть примеры получившихся файлов.
 > 
-> Примечание:
-> [root@linux]# readlink /etc/grub2.cfg
-> ../boot/grub2/grub.cfg
+> Примечание: `/etc/grub2.cfg` ссылка на `/boot/grub2/grub.cfg`
