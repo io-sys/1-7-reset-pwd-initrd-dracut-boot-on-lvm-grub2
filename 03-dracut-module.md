@@ -58,7 +58,7 @@ dracut -f -v
 *** Creating image file done ***
 *** Creating initramfs image file '/boot/initramfs-3.10.0-862.2.3.el7.x86_64.img' done ***
 ```
-Проверить, что модуль загружен в образ `initrd`
+Проверить, что модуль `test` загружен в образ `initrd`
 ```php
 lsinitrd -m /boot/initramfs-$(uname -r).img | grep te
 test
