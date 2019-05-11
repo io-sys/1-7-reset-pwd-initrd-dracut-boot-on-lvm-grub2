@@ -18,5 +18,4 @@
 >	2. `/etc/default/grub`
 >	3. `/boot/grub2/grub.cfg`
 >> ─ везде заменяем старое название на новое.
-> 
-> Примечание: `/etc/grub2.cfg` ссылка на `/boot/grub2/grub.cfg`
+>> Примечание: `/etc/grub2.cfg` ссылка на `/boot/grub2/grub.cfg`
