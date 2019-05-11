@@ -28,24 +28,32 @@ linux16 /vmlinuz-3.10.0-862.2.3.el7.x86_64 root=/dev/mapper/VolGroup00-LogVol00 
 
 __В emergence mode__
 
-Перемонтировать для чтения и записи, чтобы изменить пароль
+Перемонтировать систему для чтения и записи, чтобы изменить пароль
 ```php
-[root@linux]# mount -o remount, rw /
+sh-4.2# mount -o remount, rw /
 ```
 Проверить маркеры `SELinux`
 ```php
-[root@linux]# ls -Z /etc/shadow
+sh-4.2# ls -Z /etc/shadow
  ---------- root root ?                                /etc/shadow
-  [root@linux]#
+sh-4.2# 
 ```
 Необходимо загрузить политики `SELinux` или все сломается и совсем сложно будет пароль сменить.
 ```php
-[root@linux]# /sbin/load_policy -i 
+sh-4.2# /sbin/load_policy -i 
 ```
 Проверить, что политики `SELinux` появились.
 ```php
-[root@linux]# ls -Z /etc/shadow
+sh-4.2#  ls -Z /etc/shadow
 ----------. root root system_u:object_r:shadow_t:s0    /etc/shadow
-[root@linux]# 
+sh-4.2#  
 ```
-
+Смена пароля `root`
+```php
+sh-4.2# passwd root
+Changing password for user root.
+New password: 
+Retype new password: 
+passwd: all authentication tokens updated successfully.
+sh-4.2# 
+```
