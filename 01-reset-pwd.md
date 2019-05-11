@@ -90,17 +90,13 @@ mount | grep root
 ```php
 chroot /sysroot
 ```
-```php
-passwd root
-```
-
-SELinux  перемаркирует метки при следующей загрузке
-```php
-touch /.autorelabel
-```
 Сменить пароль уч. записи `root`
 ```php
 passwd root
+```
+`SELinux`  перемаркирует метки при следующей загрузке
+```php
+touch /.autorelabel
 ```
 Выйти из `chroot`
 ```php
