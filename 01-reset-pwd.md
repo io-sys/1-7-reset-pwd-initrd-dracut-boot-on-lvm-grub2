@@ -12,9 +12,10 @@
 #### 1) Попасть в систему без пароля несколькими способами
 `init=/bin/bash`
 
-Удалены все лишние ключи для загрузки ядра кроме тех, которые указывают, где лежат разделы на lvm и файл ядра Linux
+Удалены все лишние ключи для загрузки ядра кроме тех, которые указывают, где лежат разделы на `lvm` и файл ядра `Linux`
 не тронут ключ `ro` и добавлен `init=/bin/bash`
 __GRUB2__ 'e' (edit)
+
 __Было__
 ```php
 linux16 /vmlinuz-3.10.0-862.2.3.el7.x86_64 root=/dev/mapper/VolGroup00-LogVol00 ro no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet 
@@ -23,4 +24,3 @@ __Стало__
 ```php
 linux16 /vmlinuz-3.10.0-862.2.3.el7.x86_64 root=/dev/mapper/VolGroup00-LogVol00 ro init=/bin/bash  rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01
 ```
-#
