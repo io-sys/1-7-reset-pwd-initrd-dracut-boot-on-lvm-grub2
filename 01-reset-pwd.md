@@ -12,8 +12,9 @@
 ## Попасть в систему без пароля несколькими способами
 ### 1) Споспоб `init=/bin/bash`
 
-> Из параметров загрузки `GRUB2` из строки `linux16`, были удалены все лишние ключи, которые мешали загрузке ядра в `emergence mode`, 
+> Из параметров загрузки `GRUB2` из строки `linux16`, были удалены все лишние ключи, которые мешают загрузке ядра в `emergence mode`, 
 > не тронут `ro` и добавлен `init=/bin/bash`
+> _Загрузка Ctrl+x_
 
 __В GRUB2__ 'e' (edit)
 
@@ -59,4 +60,23 @@ sh-4.2#
 ```
 Дальше надо перезагрузить систему, желательно с кнопки.
 
+
 ### 2) Способ rd.break
+
+> Из параметров загрузки `GRUB2` из строки `linux16`, были удалены все лишние ключи, которые мешают загрузке ядра в `emergence mode`, 
+> исправлен `ro` на `rw` и добавлен конец `linux16` строки `rd.break`
+> _Загрузка Ctrl+x_
+
+__В GRUB2__ 'e' (edit)
+
+__Было:__
+```php
+linux16 /vmlinuz-3.10.0-862.2.3.el7.x86_64 root=/dev/mapper/VolGroup00-LogVol00 ro no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet 
+```
+__Стало:__
+```php
+linux16 /vmlinuz-3.10.0-862.2.3.el7.x86_64 root=/dev/mapper/VolGroup00-LogVol00 rw init=/bin/bash  rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rd.break
+```
+
+__В emergence mode__
+
