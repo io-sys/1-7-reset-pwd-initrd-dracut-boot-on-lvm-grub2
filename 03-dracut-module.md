@@ -6,11 +6,11 @@
 ### Действия:
 Создать новый каталог для модуля и перейти в него.
 ```php
-mkdir /usr/lib/dracut/modules.d/01test  && cd "$_"
+[root@linux]# mkdir /usr/lib/dracut/modules.d/01test  && cd "$_"
 ```
 __Создать файлы модуля `01test`:__
 ```php
-vi module-setup.sh
+[root@linux]# vi module-setup.sh
 #!/bin/bash
 
 check() {
@@ -27,7 +27,7 @@ install() {
 ```
 Скрипт, который будет вызываться, в нём рисуется 🐧пингвин.
 ```php
-vi test.sh
+[root@linux]# vi test.sh
 #!/bin/bash
 
 exec 0<>/dev/console 1<>/dev/console 2<>/dev/console
@@ -52,17 +52,19 @@ echo " continuing...."
 
 Пересобрать образ `initrd`, чтобы подгрузить новый модуль.
 ```php
-dracut -f -v 
+[root@linux]# dracut -f -v 
 ...
 *** Creating image file ***
 *** Creating image file done ***
 *** Creating initramfs image file '/boot/initramfs-3.10.0-862.2.3.el7.x86_64.img' done ***
+[root@linux]# 
 ```
 Проверить, что модуль `test` загружен в образ `initrd`
 ```php
-lsinitrd -m /boot/initramfs-$(uname -r).img | grep te
+[root@linux]# lsinitrd -m /boot/initramfs-$(uname -r).img | grep te
 test
 terminfo
 systemd
+[root@linux]# 
 ```
 
