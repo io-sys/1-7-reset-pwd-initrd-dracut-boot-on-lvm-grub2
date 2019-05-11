@@ -30,7 +30,7 @@
 [root@linux]# sed -i.bak01 s/VolGroup00/OtusRoot/g /boot/grub2/grub.cfg
 ```
 
-Пересоздать `initrd` образ, чтобы обновить измененное название `Volume Group` или не загрузится система.
+Пересоздать `initrd` образ, чтобы применить новое название `Volume Group` или не загрузится система.
 ```php
 [root@linux]# mkinitrd -f -v /boot/initramfs-$(uname -r).img $(uname -r)
 . . . .
