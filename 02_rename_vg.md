@@ -22,6 +22,31 @@
 > Примечание: `/etc/grub2.cfg` ссылка на `/boot/grub2/grub.cfg`
 
 
-> Для редактирования файлов воспользуюсь sed с параметрами s (substitute) заменить и  
-> g (global) - без оператора, операция замены будет производиться только для первого найденного совпадения,  
+> Для редактирования файлов воспользуюсь `sed` с параметрами `s` (`substitute`) заменить и  
+> `g` (`global`) - без оператора, операция замены будет производиться только для первого найденного совпадения,  
 > с заданным шаблоном, в каждой строке.  
+
+Редактировать, заменить старое  `VolGroup00` имя `vg` в файле на новое `OtusRoot`
+```php
+sed -i.bak01 s/VolGroup00/OtusRoot/g /etc/fstab
+```
+Проверить
+```php
+grep OtusRoot /etc/fstab
+```
+Редактировать, заменить старое  `VolGroup00` имя `vg` в файле на новое `OtusRoot`
+```php
+sed -i.bak01 s/VolGroup00/OtusRoot/g /etc/default/grub
+```
+Проверить
+```php
+grep OtusRoot /etc/default/grub
+```
+Редактировать, заменить старое  `VolGroup00` имя `vg` в файле на новое `OtusRoot`
+```php
+sed -i.bak01 s/VolGroup00/OtusRoot/g /boot/grub2/grub.cfg
+```
+Проверить
+```php
+grep OtusRoot /boot/grub2/grub.cfg
+```
