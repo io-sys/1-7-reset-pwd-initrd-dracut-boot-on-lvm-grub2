@@ -1,6 +1,6 @@
 ## 2. Установить систему на LVM, после чего переименовать VG
 
-Показать `vg`
+Показать все `vg`
 ```php
 [root@linux]# vgs
   VG         #PV #LV #SN Attr   VSize   VFree
