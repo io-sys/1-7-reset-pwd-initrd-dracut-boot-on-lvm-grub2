@@ -27,6 +27,7 @@ linux16 /vmlinuz-3.10.0-862.2.3.el7.x86_64 root=/dev/mapper/VolGroup00-LogVol00 
 ```
 
 __В emergence mode__
+
 Перемонтировать для чтения и записи, чтобы изменить пароль
 ```php
 mount -o remount, rw /
@@ -35,4 +36,4 @@ mount -o remount, rw /
 ```php
 ls -Z /etc/shadow
 ```
----------- root root ?                                /etc/shadow
+> ---------- root root ?                                /etc/shadow
