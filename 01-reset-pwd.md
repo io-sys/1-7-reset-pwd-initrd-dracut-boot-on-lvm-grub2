@@ -30,10 +30,10 @@ __В emergence mode__
 
 Перемонтировать для чтения и записи, чтобы изменить пароль
 ```php
-mount -o remount, rw /
+[root@linux]# mount -o remount, rw /
 ```
 Проверить маркеры SELinux
 ```php
-ls -Z /etc/shadow
+[root@linux]# ls -Z /etc/shadow
+ ---------- root root ?                                /etc/shadow
 ```
-> ---------- root root ?                                /etc/shadow
