@@ -1,4 +1,4 @@
-> 1-7 reset-pwd initrd-dracut-🐧module boot-on-lvm-grub2
+> 1-7 reset-pwd initrd-dracut-module boot-on-lvm-grub2
 
 # Домашнее задание: Работа с загрузчиком
 
