@@ -80,9 +80,12 @@ linux16 /vmlinuz-3.10.0-862.2.3.el7.x86_64 root=/dev/mapper/VolGroup00-LogVol00 
 
 
 __В emergence mode__
+Проверить, что система загрузилась в режиме `rw`
 ```php
 mount | grep root
+/dev/mapper/VolGroup00-LogVol00 /sysroot xfs rw,relatime,attr2,inode64,noquota 0 0
 ```
+Изменить корневой  каталог на директорию `/sysroot`
 ```php
 chroot /sysroot
 ```
@@ -94,9 +97,16 @@ SELinux  перемаркирует метки при следующей заг�
 ```php
 touch /.autorelabel
 ```
-
-	Выйти из chroot 
-	exit
-	Выйти из emergence mode
-	exit
+Сменить пароль уч. записи `root`
+```php
+passwd root
+```
+Выйти из `chroot`
+```php
+exit
+```
+Выйти из `emergence mode`
+```php
+exit
+```
 
