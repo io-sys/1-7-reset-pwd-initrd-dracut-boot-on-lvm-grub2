@@ -11,8 +11,42 @@ mkdir /usr/lib/dracut/modules.d/01test  && cd "$_"
 Создать файлы модуля.
 ```php
 vi module-setup.sh
+#!/bin/bash
+
+check() {
+    return 0
+}
+
+depends() {
+    return 0
+}
+
+install() {
+    inst_hook cleanup 00 "${moddir}/test.sh"
+}
 ```
+Скрипт, который будет вызываться, в нём рисуется 🐧пингвин.
 ```php
 vi test.sh
+#!/bin/bash
+
+exec 0<>/dev/console 1<>/dev/console 2<>/dev/console
+cat <<'EOF'
+Hello! You are in dracut module!
+ ___________________
+< I'm dracut module >
+ -------------------
+   \
+    \
+        .--.
+       |o_o |
+       |:_/ |
+      //   \ \
+     (|     | )
+    /'\_   _/`\
+    \___)=(___/
+EOF
+sleep 10
+echo " continuing...."
 ```
 
