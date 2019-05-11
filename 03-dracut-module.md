@@ -8,7 +8,7 @@
 ```php
 mkdir /usr/lib/dracut/modules.d/01test  && cd "$_"
 ```
-Создать файлы модуля.
+__Создать файлы модуля `01test`:__
 ```php
 vi module-setup.sh
 #!/bin/bash
