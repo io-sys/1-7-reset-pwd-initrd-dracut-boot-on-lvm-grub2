@@ -53,7 +53,7 @@ sdb                     8:16   0    1G  0 disk
   /dev/sda3  OtusRoot lvm2 a--  <38.97g    0
 [root@linux]# 
 ```
-Содеется `PV` на `/dev/sdb` и инициализируется с параметром `--bootloaderareasize 1m`
+Создается `PV` на `/dev/sdb` и инициализируется с параметром `--bootloaderareasize 1m`
 ```php
 [root@linux]# pvcreate /dev/sdb --bootloaderareasize 1m
 Physical volume "/dev/sdb" successfully created.
