@@ -50,3 +50,19 @@ sleep 10
 echo " continuing...."
 ```
 
+Пересобрать образ `initrd`
+```php
+dracut -f -v 
+...
+*** Creating image file ***
+*** Creating image file done ***
+*** Creating initramfs image file '/boot/initramfs-3.10.0-862.2.3.el7.x86_64.img' done ***
+```
+Проверить, что модуль загружен в образ `initrd`
+```php
+lsinitrd -m /boot/initramfs-$(uname -r).img | grep te
+test
+terminfo
+systemd
+```
+
