@@ -30,23 +30,13 @@
 ```php
 sed -i.bak01 s/VolGroup00/OtusRoot/g /etc/fstab
 ```
-Проверить
-```php
-grep OtusRoot /etc/fstab
-```
 Редактировать, заменить старое  `VolGroup00` имя `vg` в файле на новое `OtusRoot`
 ```php
 sed -i.bak01 s/VolGroup00/OtusRoot/g /etc/default/grub
-```
-Проверить
-```php
-grep OtusRoot /etc/default/grub
 ```
 Редактировать, заменить старое  `VolGroup00` имя `vg` в файле на новое `OtusRoot`
 ```php
 sed -i.bak01 s/VolGroup00/OtusRoot/g /boot/grub2/grub.cfg
 ```
-Проверить
-```php
-grep OtusRoot /boot/grub2/grub.cfg
-```
+
+
