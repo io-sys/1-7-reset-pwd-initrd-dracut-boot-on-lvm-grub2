@@ -78,7 +78,25 @@ __Стало:__
 linux16 /vmlinuz-3.10.0-862.2.3.el7.x86_64 root=/dev/mapper/VolGroup00-LogVol00 rw rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rd.break
 ```
 
+
 __В emergence mode__
+```php
+mount | grep root
+```
+```php
+chroot /sysroot
+```
+```php
+passwd root
+```
 
+SELinux  перемаркирует метки при следующей загрузке
+```php
+touch /.autorelabel
+```
 
+	Выйти из chroot 
+	exit
+	Выйти из emergence mode
+	exit
 
