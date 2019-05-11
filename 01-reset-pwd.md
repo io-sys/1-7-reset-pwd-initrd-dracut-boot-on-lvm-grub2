@@ -32,8 +32,19 @@ __В emergence mode__
 ```php
 [root@linux]# mount -o remount, rw /
 ```
-Проверить маркеры SELinux
+Проверить маркеры `SELinux`
 ```php
 [root@linux]# ls -Z /etc/shadow
  ---------- root root ?                                /etc/shadow
+ [root@linux]#
 ```
+Необходимо загрузить политики `SELinux` или все сломается и совсем сложно будет пароль сменить.
+```php
+[root@linux]# /sbin/load_policy -i 
+```
+Проверить, что политики `SELinux` появились.
+```php
+[root@linux]# ls -Z /etc/shadow
+----------. root root system_u:object_r:shadow_t:s0    /etc/shadow
+```
+
