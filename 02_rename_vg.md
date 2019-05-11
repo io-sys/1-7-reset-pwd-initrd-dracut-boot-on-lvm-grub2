@@ -23,14 +23,14 @@
 > `g` (`global`) - без оператора, операция замены будет производиться только для первого найденного совпадения,
 > с заданным шаблоном, в каждой строке.  
 
-Редактировать, заменить имя `Volume Group` старое `VolGroup00` на новое `OtusRoot` в файлах:
+Редактировать, заменить в `Volume Group` старое имя `VolGroup00` на новое `OtusRoot` в файлах:
 ```php
 [root@linux]# sed -i.bak01 s/VolGroup00/OtusRoot/g /etc/fstab
 [root@linux]# sed -i.bak01 s/VolGroup00/OtusRoot/g /etc/default/grub
 [root@linux]# sed -i.bak01 s/VolGroup00/OtusRoot/g /boot/grub2/grub.cfg
 ```
 
-Пересоздать `initrd` образ, чтобы применить изменения в имени `Volume Group` или не загрузится система.
+Пересоздать `initrd` образ, чтобы применить изменения нового имени в `Volume Group` или не загрузится система.
 ```php
 [root@linux]# mkinitrd -f -v /boot/initramfs-$(uname -r).img $(uname -r)
 ....
