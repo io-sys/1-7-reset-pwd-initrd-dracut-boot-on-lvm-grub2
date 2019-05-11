@@ -36,7 +36,7 @@ __В emergence mode__
 ```php
 [root@linux]# ls -Z /etc/shadow
  ---------- root root ?                                /etc/shadow
- [root@linux]#
+  [root@linux]#
 ```
 Необходимо загрузить политики `SELinux` или все сломается и совсем сложно будет пароль сменить.
 ```php
@@ -46,5 +46,6 @@ __В emergence mode__
 ```php
 [root@linux]# ls -Z /etc/shadow
 ----------. root root system_u:object_r:shadow_t:s0    /etc/shadow
+[root@linux]# 
 ```
 
