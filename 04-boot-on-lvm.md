@@ -223,7 +223,6 @@ Installation finished. No error reported.
 `sda2` без ФС, был стерт.
 ```php
 [root@linux]# lsblk -fs
-
 NAME                FSTYPE      LABEL UUID                                   MOUNTPOINT
 sda1
 └─sda
