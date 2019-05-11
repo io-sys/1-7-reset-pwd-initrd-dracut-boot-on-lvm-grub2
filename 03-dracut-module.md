@@ -4,9 +4,15 @@
 > Скрипты модулей хранятся в каталоге `/usr/lib/dracut/modules.d/`
 
 ### Действия:
-Создать каталог и перейти в него.mkdir /usr/lib/dracut/modules.d/01test  && cd "$_"
+Создать новый каталог и перейти в него.
+```php
+mkdir /usr/lib/dracut/modules.d/01test  && cd "$_"
+```
+Создать файлы модуля.
 ```php
 vi module-setup.sh
+```
+```php
 vi test.sh
 ```
 
