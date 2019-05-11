@@ -49,7 +49,6 @@ sh-4.2#  ls -Z /etc/shadow
 sh-4.2#  
 ```
 Смена пароля `root`
-```
 ```php
 sh-4.2# passwd root
 Changing password for user root.
