@@ -208,7 +208,7 @@ dd: writing to ‘/dev/sda2’: No space left on device
 1073741824 bytes (1.1 GB) copied, 34.2592 s, 31.3 MB/s
 [root@linux]# 
 ```
-__Надо обязательно восстановить `GRUB2` на `sda` после заполнения 0'и раздела `sda2` или не взлетит.__
+__Надо обязательно восстановить `GRUB2` на `sda` после заполнения 0'и раздела `/dev/sda2` или не взлетит.__
 ```php
 [root@linux]# grub2-install /dev/sda
 Installing for i386-pc platform.
@@ -220,7 +220,7 @@ Installation finished. No error reported.
 [root@linux]# reboot
 ```
 Проверка после перезагрузки примонтированных разделов. 
-`sda2` без ФС, был стерт.
+`/dev/sda2` без ФС, был стерт.
 ```php
 [root@linux]# lsblk -fs
 NAME                FSTYPE      LABEL UUID                                   MOUNTPOINT
