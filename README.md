@@ -8,7 +8,7 @@
 
 ✅  3. [Добавить модуль🐧 в `initrd`.](https://github.com/io-sys/1-7-reset-pwd-initrd-dracut-boot-on-lvm-grub2/blob/master/03-dracut-module.md)
 
-✅  4*. Сконфигурировать систему без отдельного раздела с `/boot`, а только с `LVM`
+✅  4*. [Сконфигурировать систему без отдельного раздела с `/boot`, а только с `LVM`](https://github.com/io-sys/1-7-reset-pwd-initrd-dracut-boot-on-lvm-grub2/blob/master/04-boot-on-lvm.md)
 Репозиторий с пропатченым `grub`: https://yum.rumyantsev.com/centos/7/x86_64/
 `PV` необходимо инициализировать с параметром `--bootloaderareasize 1m`
 
