@@ -23,7 +23,7 @@
 > `g` (`global`) - без оператора, операция замены будет производиться только для первого найденного совпадения,
 > с заданным шаблоном, в каждой строке.  
 
-Редактировать, заменить старое  `VolGroup00` имя `Volume Group` в файлах на новое `OtusRoot`
+Редактировать, заменить имя `Volume Group` старое `VolGroup00` на новое `OtusRoot` в файлах:
 ```php
 [root@linux]# sed -i.bak01 s/VolGroup00/OtusRoot/g /etc/fstab
 [root@linux]# sed -i.bak01 s/VolGroup00/OtusRoot/g /etc/default/grub
