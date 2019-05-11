@@ -57,3 +57,4 @@ Retype new password:
 passwd: all authentication tokens updated successfully.
 sh-4.2# 
 ```
+Дальше надо перезагрузить систему, желательно с кнопки.
